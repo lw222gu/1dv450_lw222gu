@@ -1,0 +1,14 @@
+<div id="register">
+    <h2>Registrera användare</h2>
+    <fieldset>
+        <%= form_for @user do |f| %>
+            <p><%= f.label :username %></p>
+            <p><%= f.text_field :username %></p>
+            <p><%= f.label :password %></p>
+            <p><%= f.password_field :password %></p>
+            <p><%= f.label :password_confirmation %></p>
+            <p><%= f.password_field :password_confirmation %></p>
+            <p><%= f.submit 'Registrera' %></p>
+        <% end %>
+    </fieldset>
+</div>
