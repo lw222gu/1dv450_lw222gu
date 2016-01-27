@@ -15,6 +15,7 @@ class SessionController < ApplicationController
     end
     
     def logout
-        
+        session[:userid] = nil
+        redirect_to root_path, :notice => 'Du har loggat ut'
     end
 end
