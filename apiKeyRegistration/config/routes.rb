@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :users
   
+  get 'apikeys' => 'apikeys#show', as: :apikey
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
