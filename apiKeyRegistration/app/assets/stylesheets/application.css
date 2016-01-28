@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+ 
+body {
+    padding-top:35px;
+}
+
+#footer {
+    border:solid;
+    border-width:0;
+    border-top-width:1px;
+    border-color:rgb(200, 200, 200);
+    margin-top:35px;
+    padding-top:20px;
+}
+
+
+/* Form css */
+input {
+    display:block;
+    border:solid;
+    border-radius:3px;
+    border-width:1px;
+    border-color:rgb(200, 200, 200);
+    padding:10px;
+    width:250px;
+}
+
+label {
+    margin-top:20px;
+}
+
+#submit {
+    color:rgb(240, 240, 240);
+    background-color:rgb(30, 30, 30);
+    border:none;
+    border-radius:3px;
+    padding:15px 20px;
+    margin-top:20px;
+    margin-bottom:20px;
+    width:auto;
+}
+
+#submit:hover, #submit:focus {
+    background-color:rgb(60, 60, 60);
+}
