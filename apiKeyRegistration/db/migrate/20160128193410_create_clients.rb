@@ -5,6 +5,7 @@ class CreateClients < ActiveRecord::Migration
       t.string :description, :limit => 250
       t.string :url
       t.string :key
+      t.belongs_to :user, index: true
       t.timestamps null: false
     end
   end
