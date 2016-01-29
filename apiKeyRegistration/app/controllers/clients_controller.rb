@@ -17,6 +17,9 @@ class ClientsController < ApplicationController
         end
     end
     
+    def delete
+    end
+    
     private
     def client_params
         params.require(:client).permit(:name, :description, :url)

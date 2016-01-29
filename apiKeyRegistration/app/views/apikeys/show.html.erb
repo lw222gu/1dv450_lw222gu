@@ -4,9 +4,14 @@
     <div>
         <h2>Mina applikationer</h2>
         <%= link_to 'Lägg till applikation', new_client_path %>
-        <ul>
-            <%= @user.clients.each do |client| %>
-                <li>client.name</li>
+        <ul id="user-clients">
+            <% @user.clients.each do |client| %>
+                <li>
+                    <h3><%= client.name %></h3>
+                    <p><strong>API-nyckel:</strong> <%= client.key %> || <strong>Url:</strong> <%= client.url %></p>
+                    <p><strong>Beskrivning:</strong> <%= client.description %></p>
+                    <%= link_to 'Ta bort', delete_client_path %>
+                </li>
             <% end %>
         </ul>
     </div>

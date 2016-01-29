@@ -59,3 +59,26 @@ label {
 #submit:hover, #submit:focus {
     background-color:rgb(60, 60, 60);
 }
+
+
+/* User clients css */
+
+#user-clients {
+    list-style:none;
+    padding-left:0;
+    margin-top:35px;
+}
+
+#user-clients li {
+    background-color:rgb(245, 245, 240);
+    padding:15px;
+    margin-bottom:7px;
+}
+
+#user-clients li h3 {
+    margin-top:0;
+}
+
+#user-clients li p {
+    margin-bottom:5px;
+}
