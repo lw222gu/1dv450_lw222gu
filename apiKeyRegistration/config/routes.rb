@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'users' => 'users#index', as: :users
   post 'users' => 'users#create'
   get 'new' => 'users#new', as: :new_user
+  
+  get 'clients' => 'clients#new', as: :new_client
+  post 'clients' => 'clients#create'
   get 'apikeys' => 'apikeys#show', as: :apikey
   post 'login' => 'sessions#login', as: :login
   get 'logout' => 'sessions#logout', as: :logout

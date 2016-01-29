@@ -1,0 +1,17 @@
+<div class="container">
+    <div id="register-client">
+        <h2>Lägg till applikation</h2>
+        <fieldset>
+            <%= form_for @client do |c| %>
+                <%= c.label :name %>
+                <%= c.text_field :name %>
+                <%= c.label :description %>
+                <%= c.text_field :description %>
+                <%= c.label :url %>
+                <%= c.text_field :url %>
+                <%= c.submit 'Skapa', :id => "submit" %>
+            <% end %>
+        </fieldset>
+        <%= link_to 'Tillbaka till min sida', apikey_path %>
+    </div>
+</div>

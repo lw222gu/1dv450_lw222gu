@@ -1,2 +1,13 @@
-<h1>...hej!</h1>
-<%= link_to 'Logga ut', logout_path %>
+<div class="container">
+    <h1>Välkommen <%= @user.username %>!</h1>
+    <%= link_to 'Logga ut', logout_path %>
+    <div>
+        <h2>Mina applikationer</h2>
+        <%= link_to 'Lägg till applikation', new_client_path %>
+        <ul>
+            <%= @user.clients.each do |client| %>
+                <li>client.name</li>
+            <% end %>
+        </ul>
+    </div>
+</div>
