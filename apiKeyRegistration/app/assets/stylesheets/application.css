@@ -16,6 +16,7 @@
  
 body {
     padding-top:35px;
+    font-size:13px;
 }
 
 #footer {
@@ -26,6 +27,19 @@ body {
     margin-top:35px;
     padding-top:20px;
     padding-bottom:10px;
+}
+
+h1 {
+    margin-bottom:25px;
+}
+
+h2 {
+    font-size:20px;
+    font-weight:bold;
+}
+
+p {
+    
 }
 
 
@@ -45,7 +59,7 @@ label {
     font-weight:normal;
 }
 
-#submit {
+#submit, #user-information a {
     color:rgb(240, 240, 240);
     background-color:rgb(30, 30, 30);
     border:none;
@@ -56,17 +70,37 @@ label {
     width:auto;
 }
 
-#submit:hover, #submit:focus {
+#submit:hover, #submit:focus, #user-information a:hover, #user-information a:focus {
     background-color:rgb(60, 60, 60);
+    text-decoration:none;
+}
+
+
+/* User information css */
+
+#user-information {
+    float:right;
+    display:block;
+    height:60px;
+    padding-top:20px;
+}
+
+#user-information a, #user-information p {
+    display:inline;
+}
+
+#user-information a {
+    margin-left:25px;
 }
 
 
 /* User clients css */
 
+
 #user-clients {
     list-style:none;
     padding-left:0;
-    margin-top:35px;
+    margin-top:10px;
 }
 
 #user-clients li {
@@ -75,7 +109,7 @@ label {
     margin-bottom:7px;
 }
 
-#user-clients li h3 {
+#user-clients li h2 {
     margin-top:0;
 }
 

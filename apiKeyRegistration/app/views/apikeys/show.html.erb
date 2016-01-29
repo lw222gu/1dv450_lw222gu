@@ -1,18 +1,22 @@
 <div class="container">
-    <h1>Välkommen <%= @user.username %>!</h1>
-    <%= link_to 'Logga ut', logout_path %>
     <div>
-        <h2>Mina applikationer</h2>
-        <%= link_to 'Lägg till applikation', new_client_path %>
+        <div id="user-information">
+            <p>Inloggad som: <%= @user.username %></p>
+            <%= link_to 'Logga ut', logout_path %>
+        </div>
+        <h1>Applikationer</h1>
+        <div>
+        <%= link_to 'Lägg till applikation', new_client_path, :id => 'add-client' %>
         <ul id="user-clients">
             <% @user.clients.each do |client| %>
                 <li>
-                    <h3><%= client.name %></h3>
+                    <h2><%= client.name %></h2>
                     <p><strong>API-nyckel:</strong> <%= client.key %> || <strong>Url:</strong> <%= client.url %></p>
                     <p><strong>Beskrivning:</strong> <%= client.description %></p>
                     <%= link_to 'Ta bort', delete_client_path %>
                 </li>
             <% end %>
         </ul>
+        </div>
     </div>
 </div>
