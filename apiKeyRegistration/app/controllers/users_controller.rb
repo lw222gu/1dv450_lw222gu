@@ -13,8 +13,10 @@ class UsersController < ApplicationController
         
         if @user.save
            session[:userid] = @user.id 
+           flash[:success] = 'Du är nu en registrerad användare.'
            redirect_to apikey_path
         else
+            flash[:danger] = 'Något gick fel vid registreringen.'
             render :action => 'new'
         end
         
