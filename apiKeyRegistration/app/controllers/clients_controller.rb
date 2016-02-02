@@ -13,6 +13,7 @@ class ClientsController < ApplicationController
            #session[:userid] = @user.id 
            redirect_to apikey_path
         else
+            flash[:danger] = 'Applikationen kunde inte sparas.'
             render :action => 'new'
         end
     end

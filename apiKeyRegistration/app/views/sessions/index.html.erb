@@ -1,11 +1,8 @@
-<% if flash[:notice] %>
-    <div class="notice">
-        <%= flash[:notice] %>
-    </div>
-<% end %>
-
 <div class="container">
-    <div id="login">
+    <div class="col-md-8">
+        <h1>Välkommen!</h1>
+    </div>
+    <div id="login" class="col-md-4">
         <h2>Logga in</h2>
         <fieldset>
             <%= form_tag(login_path, method: 'post') do %>

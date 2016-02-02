@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   def require_login
     # Om current_user returnerar nil redirectas användaren till startsidan.
     if current_user.nil? then
+      flash[:danger] = 'Du måste logga in för att se sidan du efterfrågade.'
       redirect_to root_path
     end
   end

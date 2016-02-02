@@ -9,13 +9,14 @@ class SessionsController < ApplicationController
             session[:userid] = u.id
             redirect_to apikey_path
         else
-            flash[:notice] = 'Fel vid inloggning.'
+            flash[:danger] = 'Fel vid inloggning.'
             redirect_to root_path
         end
     end
     
     def logout
         session[:userid] = nil
-        redirect_to root_path, :notice => 'Du har loggat ut'
+        flash[:success] = 'Du har loggat ut.'
+        redirect_to root_path
     end
 end
