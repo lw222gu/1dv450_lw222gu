@@ -19,6 +19,10 @@ class ClientsController < ApplicationController
     end
     
     def delete
+        @client = Client.find(params[:id])
+        @client.destroy
+        flash[:success] = 'Applikationen raderades.'
+        redirect_to apikey_path
     end
     
     private
