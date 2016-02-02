@@ -11,6 +11,7 @@ class ClientsController < ApplicationController
         
         if @client.save
            #session[:userid] = @user.id 
+           flash[:success] = 'Applikationen sparades.'
            redirect_to apikey_path
         else
             flash[:danger] = 'Applikationen kunde inte sparas.'
