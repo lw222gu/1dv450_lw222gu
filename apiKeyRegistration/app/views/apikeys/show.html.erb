@@ -1,9 +1,5 @@
 <div class="container">
     <div>
-        <div id="user-information">
-            <p>Inloggad som: <%= @user.username %></p>
-            <%= link_to 'Logga ut', logout_path %>
-        </div>
         <h1>Applikationer</h1>
         <div>
         <%= link_to 'Lägg till applikation', new_client_path, :id => 'add-client' %>

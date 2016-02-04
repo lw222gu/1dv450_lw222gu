@@ -12,7 +12,6 @@ class ClientsController < ApplicationController
         @client.user_id = session[:userid]
         
         if @client.save
-           #session[:userid] = @user.id 
            flash[:success] = 'Applikationen sparades.'
            redirect_to apikey_path
         else
@@ -25,7 +24,6 @@ class ClientsController < ApplicationController
         @client = Client.find(params[:id])
         @client.destroy
         flash[:success] = 'Applikationen raderades.'
-        #redirect_to apikey_path
     end
     
     def user_delete

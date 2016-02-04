@@ -15,7 +15,18 @@
   </div>
 <% end %>
 
+<div class="container">
+
+<% if !@current_user.nil? %>
+  <div id="user-information">
+    <p>Inloggad som: <%= @current_user.username %></p>
+    <%= link_to 'Logga ut', logout_path %>
+  </div>
+<% end %>
+
 <%= yield %>
+
+</div>
 
 <%= render 'layouts/footer' %>
 
