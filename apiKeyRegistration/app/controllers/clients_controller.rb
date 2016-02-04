@@ -29,10 +29,19 @@ class ClientsController < ApplicationController
         redirect_to apikey_path
     end
     
-    def admin_delete
+    def revoke
         @client = Client.find(params[:id])
-        @client.key = 'Applikationens API-nyckel har raderats av admin.'
-        flash[:success] = 'Applikationen raderades.'
+        @client.active = false
+        @client.save
+        flash[:success] = 'Applikationen har inaktiverats.'
+        redirect_to admin_path
+    end
+    
+    def reactivate
+        @client = Client.find(params[:id])
+        @client.active = true
+        @client.save
+        flash[:success] = 'Applikationen har återaktiverats.'
         redirect_to admin_path
     end
     

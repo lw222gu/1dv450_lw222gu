@@ -116,3 +116,11 @@ label {
 #user-clients li p {
     margin-bottom:5px;
 }
+
+.active {
+    color: green;
+}
+
+.inactive {
+    color: red;
+}

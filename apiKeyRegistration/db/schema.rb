@@ -14,13 +14,14 @@
 ActiveRecord::Schema.define(version: 20160128193410) do
 
   create_table "clients", force: :cascade do |t|
-    t.string   "name",        limit: 50,  null: false
+    t.string   "name",        limit: 50,                 null: false
     t.string   "description", limit: 250
     t.string   "url"
     t.string   "key"
+    t.boolean  "active",                  default: true, null: false
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   add_index "clients", ["user_id"], name: "index_clients_on_user_id"
