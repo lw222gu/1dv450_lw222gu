@@ -23,9 +23,6 @@ c = Client.create
 c.name = 'En applikation'
 c.description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 c.url = 'www.test.se'
-
-charset = Array('A'..'Z') + Array('a'..'z')
-random = Array.new(10) { charset.sample }.join
-c.key = DateTime.now.strftime('%s') + random
+c.key = DateTime.now.strftime('%s') + SecureRandom.hex(20)
 c.user_id = 2
 c.save

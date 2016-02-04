@@ -8,10 +8,7 @@ class ClientsController < ApplicationController
     
     def create
         @client = Client.new(client_params)
-        
-        charset = Array('A'..'Z') + Array('a'..'z')
-        random = Array.new(10) { charset.sample }.join
-        @client.key = DateTime.now.strftime('%s') + random
+        @client.key = DateTime.now.strftime('%s') + SecureRandom.hex(20)
         @client.user_id = session[:userid]
         
         if @client.save
