@@ -12,12 +12,13 @@ Rails.application.routes.draw do
   
   get 'clients' => 'clients#new', as: :new_client
   post 'clients' => 'clients#create'
-  get 'delete_client' => 'clients#delete', as: :delete_client
+  get 'delete_client' => 'clients#user_delete', as: :delete_client
   get 'apikeys' => 'apikeys#show', as: :apikey
   post 'login' => 'sessions#login', as: :login
   get 'logout' => 'sessions#logout', as: :logout
   
   get 'admin' => 'admins#show', as: :admin
+  get 'admin_delete_client' => 'clients#admin_delete', as: :admin_delete_client
   get 'revoke_client' => 'clients#revoke', as: :revoke_client
   get 'reactivate_client' => 'clients#reactivate', as: :reactivate_client
   

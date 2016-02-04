@@ -121,6 +121,6 @@ label {
     color: green;
 }
 
-.inactive {
+.inactive, .red {
     color: red;
 }

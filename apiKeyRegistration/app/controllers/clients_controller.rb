@@ -28,7 +28,17 @@ class ClientsController < ApplicationController
         @client = Client.find(params[:id])
         @client.destroy
         flash[:success] = 'Applikationen raderades.'
+        #redirect_to apikey_path
+    end
+    
+    def user_delete
+        delete
         redirect_to apikey_path
+    end
+    
+    def admin_delete
+        delete
+        redirect_to admin_path
     end
     
     def revoke

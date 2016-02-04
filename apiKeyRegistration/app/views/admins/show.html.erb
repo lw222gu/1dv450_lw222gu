@@ -27,7 +27,8 @@
                         <% else %>
                             <%= link_to 'Återaktivera', reactivate_client_path(:id => client.id) %>
                         <% end %>
-                        
+                        <br/>
+                        <%= link_to 'Radera (går inte att ångra)', admin_delete_client_path(:id => client.id), {:class => 'red'} %>
                     </li>
                 <% end %>
             </ul>
