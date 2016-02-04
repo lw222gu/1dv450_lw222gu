@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#login', as: :login
   get 'logout' => 'sessions#logout', as: :logout
   
+  get 'admin' => 'admins#show', as: :admin
+  get 'admin_delete_client' => 'clients#admin_delete', as: :admin_delete_client
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

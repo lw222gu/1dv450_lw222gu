@@ -29,6 +29,13 @@ class ClientsController < ApplicationController
         redirect_to apikey_path
     end
     
+    def admin_delete
+        @client = Client.find(params[:id])
+        @client.key = 'Applikationens API-nyckel har raderats av admin.'
+        flash[:success] = 'Applikationen raderades.'
+        redirect_to admin_path
+    end
+    
     private
     def client_params
         params.require(:client).permit(:name, :description, :url)
