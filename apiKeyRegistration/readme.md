@@ -5,7 +5,8 @@ Lisa Westlund, lw222gu
 Applikationen körs via [Cloud9](https://dv450-lw222gu-lw222gu.c9users.io/apikeys).
 Vill du testa den lokalt, kör följande i terminalen:
 
-1. bundle install
+1. cd apiKeyRegistration
+2. bundle install
 2. rake db:migrate
 3. rake db:seed
 4. rails server (eller rails s -b $IP -p $PORT via Cloud9:s terminal)
