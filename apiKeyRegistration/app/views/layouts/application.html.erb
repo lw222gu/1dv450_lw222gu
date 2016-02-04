@@ -9,26 +9,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %> container">
-      <p><%= value %></p>
+    
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %> container">
+        <p><%= value %></p>
+    </div>
+  <% end %>
+  
+  <div class="container">
+    <% if !@current_user.nil? %>
+      <div id="user-information">
+        <p>Inloggad som: <%= @current_user.username %></p>
+        <%= link_to 'Logga ut', logout_path %>
+      </div>
+    <% end %>
+    <%= yield %>
   </div>
-<% end %>
-
-<div class="container">
-
-<% if !@current_user.nil? %>
-  <div id="user-information">
-    <p>Inloggad som: <%= @current_user.username %></p>
-    <%= link_to 'Logga ut', logout_path %>
-  </div>
-<% end %>
-
-<%= yield %>
-
-</div>
-
-<%= render 'layouts/footer' %>
+  
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>
