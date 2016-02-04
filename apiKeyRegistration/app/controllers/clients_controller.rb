@@ -1,5 +1,7 @@
 class ClientsController < ApplicationController
     
+    before_action :require_login
+    
     def new
         @client = Client.new
     end
