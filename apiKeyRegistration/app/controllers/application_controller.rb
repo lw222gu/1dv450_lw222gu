@@ -21,8 +21,7 @@ class ApplicationController < ActionController::Base
   end
   
   def check_admin_rights
-    require_login
-    if current_user.admin = false
+    if !current_user.admin
       flash[:danger] = 'Du har inte rättigheter att visa sidan du efterfrågade.'
       redirect_to apikey_path
     end
