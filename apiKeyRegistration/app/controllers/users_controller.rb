@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         
         if @user.save
            session[:userid] = @user.id 
-           flash[:success] = 'Du är nu en registrerad användare. Prova att logga in.'
+           flash[:success] = 'Du är nu en registrerad användare.'
            redirect_to apikey_path
         else
             if User.find_by username: @user.username
