@@ -4,6 +4,7 @@ Lisa Westlund, lw222gu
 ## Körinstruktioner
 Applikationen körs via [Cloud9](https://dv450-lw222gu-lw222gu.c9users.io/apikeys).
 Vill du testa den lokalt, kör följande i terminalen:
+
 1. bundle install
 2. rake db:migrate
 3. rake db:seed
