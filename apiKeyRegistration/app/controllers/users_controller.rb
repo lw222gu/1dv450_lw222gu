@@ -17,7 +17,7 @@ class UsersController < ApplicationController
                 render :action => 'new' and return
             end
             flash[:danger] = 'Något gick fel vid registreringen.'
-            render :action => 'new'
+            render 'new'
         end
         
     end

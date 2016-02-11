@@ -17,12 +17,12 @@
                 <p><strong>Beskrivning:</strong> <%= client.description %></p>
                 
                 <% if client.active %>
-                    <%= link_to 'Inaktivera', revoke_client_path(:id => client.id) %>
+                    <%= link_to 'Inaktivera', revoke_client_path(id: client.id) %>
                 <% else %>
-                    <%= link_to 'Återaktivera', reactivate_client_path(:id => client.id) %>
+                    <%= link_to 'Återaktivera', reactivate_client_path(id: client.id) %>
                 <% end %>
                 <br/>
-                <%= link_to 'Radera (går inte att ångra)', delete_client_path(:id => client.id), {:class => 'red'} %>
+                <%= link_to 'Radera (går inte att ångra)', delete_client_path(id: client.id), {class: 'red'} %>
             </li>
         <% end %>
     </ul>
