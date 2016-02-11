@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
     
     before_action :require_login
+    before_action :fetch_client, only: [:delete, :revoke, :reactivate]
     
     def new
         @client = Client.new
@@ -21,7 +22,7 @@ class ClientsController < ApplicationController
     end
     
     def delete
-        @client = Client.find(params[:id])
+        # @client = Client.find(params[:id])
         @client.destroy
         flash[:success] = 'Applikationen raderades.'
         if current_user.admin?
@@ -32,7 +33,7 @@ class ClientsController < ApplicationController
     end
     
     def revoke
-        @client = Client.find(params[:id])
+        # @client = Client.find(params[:id])
         @client.active = false
         @client.save
         flash[:success] = 'Applikationen har inaktiverats.'
@@ -40,7 +41,7 @@ class ClientsController < ApplicationController
     end
     
     def reactivate
-        @client = Client.find(params[:id])
+        # @client = Client.find(params[:id])
         @client.active = true
         @client.save
         flash[:success] = 'Applikationen har återaktiverats.'
@@ -48,7 +49,14 @@ class ClientsController < ApplicationController
     end
     
     private
+    
     def client_params
         params.require(:client).permit(:name, :description, :url)
+    end
+    
+    private
+    
+    def fetch_client
+      @client = Client.find(params[:id])
     end
 end
