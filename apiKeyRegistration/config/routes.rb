@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#logout', as: :logout
   
   get 'admin' => 'admins#show', as: :admin
-  # get 'admin_delete_client' => 'clients#admin_delete', as: :admin_delete_client
   get 'revoke_client' => 'clients#revoke', as: :revoke_client
   get 'reactivate_client' => 'clients#reactivate', as: :reactivate_client
   
