@@ -19,7 +19,6 @@ class UsersController < ApplicationController
             flash[:danger] = 'Något gick fel vid registreringen.'
             render 'new'
         end
-        
     end
     
     private

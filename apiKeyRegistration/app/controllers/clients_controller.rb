@@ -26,7 +26,6 @@ class ClientsController < ApplicationController
     end
     
     def destroy
-        # @client = Client.find(params[:id])
         @client.destroy
         flash[:success] = 'Applikationen raderades.'
         if current_user.admin?
@@ -37,7 +36,6 @@ class ClientsController < ApplicationController
     end
     
     def revoke
-        # @client = Client.find(params[:id])
         @client.active = false
         @client.save
         flash[:success] = 'Applikationen har inaktiverats.'
@@ -45,7 +43,6 @@ class ClientsController < ApplicationController
     end
     
     def reactivate
-        # @client = Client.find(params[:id])
         @client.active = true
         @client.save
         flash[:success] = 'Applikationen har återaktiverats.'
