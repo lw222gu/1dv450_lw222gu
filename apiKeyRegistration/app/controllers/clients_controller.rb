@@ -3,6 +3,10 @@ class ClientsController < ApplicationController
     before_action :require_login
     before_action :fetch_client, only: [:delete, :revoke, :reactivate]
     
+    def show
+        @user = User.find(session[:userid])
+    end
+    
     def new
         @client = Client.new
     end
