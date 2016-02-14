@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
             if u.admin
                 redirect_to admin_path
             else
-                redirect_to apikey_path
+                redirect_to profile_path
             end
         else
             flash[:danger] = 'Fel vid inloggning.'

@@ -1,9 +1,9 @@
 class ClientsController < ApplicationController
     
     before_action :require_login
-    before_action :fetch_client, only: [:delete, :revoke, :reactivate]
+    before_action :fetch_client, only: [:destroy, :revoke, :reactivate]
     
-    def show
+    def index
         @user = User.find(session[:userid])
     end
     
@@ -18,21 +18,21 @@ class ClientsController < ApplicationController
         
         if @client.save
            flash[:success] = 'Applikationen sparades.'
-           redirect_to apikey_path
+           redirect_to profile_path
         else
             flash[:danger] = 'Applikationen kunde inte sparas.'
             render :action => 'new'
         end
     end
     
-    def delete
+    def destroy
         # @client = Client.find(params[:id])
         @client.destroy
         flash[:success] = 'Applikationen raderades.'
         if current_user.admin?
             redirect_to admin_path
         else
-            redirect_to apikey_path
+            redirect_to profile_path
         end
     end
     

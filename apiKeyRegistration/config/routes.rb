@@ -4,24 +4,26 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'sessions#new'
-  # resources :users
-  
-  get 'users' => 'users#index', as: :users
-  post 'users' => 'users#create'
-  get 'new' => 'users#new', as: :new_user
-  
-  get 'clients' => 'clients#new', as: :new_client
-  post 'clients' => 'clients#create'
-  get 'delete_client' => 'clients#delete', as: :delete_client
-  get 'apikeys' => 'clients#show', as: :apikey
-  
+
   get 'login' => 'sessions#new', as: :login
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy', as: :logout
   
-  get 'admin' => 'admins#show', as: :admin
+  get 'users' => 'users#new', as: :users
+  post 'users' => 'users#create'
+
+  get 'profile' => 'clients#index', as: :profile
+  
+  
+  get 'clients' => 'clients#new', as: :new_client
+  post 'clients' => 'clients#create'
+  get 'delete_client' => 'clients#destroy', as: :delete_client
+  
+  get 'admin' => 'admins#index', as: :admin
   get 'revoke_client' => 'clients#revoke', as: :revoke_client
   get 'reactivate_client' => 'clients#reactivate', as: :reactivate_client
+  
+  # resources :clients
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
