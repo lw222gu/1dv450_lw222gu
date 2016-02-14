@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         if @user.save
            session[:userid] = @user.id 
            flash[:success] = 'Du är nu en registrerad användare.'
-           redirect_to profile_path
+           redirect_to clients_path
         else
             if User.find_by username: @user.username
                 flash[:danger] = 'Användarnamnet är upptaget. Prova med något annat.'

@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
         if u && u.authenticate(params[:password])
             session[:userid] = u.id
             if u.admin
-                redirect_to admin_path
+                redirect_to admins_path
             else
-                redirect_to profile_path
+                redirect_to clients_path
             end
         else
             flash[:danger] = 'Fel vid inloggning.'

@@ -18,7 +18,7 @@ class ClientsController < ApplicationController
         
         if @client.save
            flash[:success] = 'Applikationen sparades.'
-           redirect_to profile_path
+           redirect_to clients_path
         else
             flash[:danger] = 'Applikationen kunde inte sparas.'
             render :action => 'new'
@@ -30,9 +30,9 @@ class ClientsController < ApplicationController
         @client.destroy
         flash[:success] = 'Applikationen raderades.'
         if current_user.admin?
-            redirect_to admin_path
+            redirect_to admins_path
         else
-            redirect_to profile_path
+            redirect_to clients_path
         end
     end
     
@@ -41,7 +41,7 @@ class ClientsController < ApplicationController
         @client.active = false
         @client.save
         flash[:success] = 'Applikationen har inaktiverats.'
-        redirect_to admin_path
+        redirect_to admins_path
     end
     
     def reactivate
@@ -49,7 +49,7 @@ class ClientsController < ApplicationController
         @client.active = true
         @client.save
         flash[:success] = 'Applikationen har återaktiverats.'
-        redirect_to admin_path
+        redirect_to admins_path
     end
     
     private
