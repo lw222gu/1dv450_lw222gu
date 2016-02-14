@@ -20,7 +20,7 @@
     <% if !@current_user.nil? %>
       <div id="user-information">
         <p>Inloggad som: <%= @current_user.username %></p>
-        <%= link_to 'Logga ut', logout_path, data: {no_turbolink: true} %>
+        <%= link_to 'Logga ut', logout_path, method: :delete, data: {no_turbolink: true} %>
       </div>
     <% end %>
     <%= yield %>

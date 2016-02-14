@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
     
-    def index
+    def new
     end
     
-    def login
+    def create
         u = User.find_by_username(params[:username])
         if u && u.authenticate(params[:password])
             session[:userid] = u.id
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         end
     end
     
-    def logout
+    def destroy
         session[:userid] = nil
         flash[:success] = 'Du har loggat ut.'
         redirect_to root_path

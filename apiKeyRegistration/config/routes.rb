@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'sessions#index'
+  root 'sessions#new'
   # resources :users
   
   get 'users' => 'users#index', as: :users
@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   post 'clients' => 'clients#create'
   get 'delete_client' => 'clients#delete', as: :delete_client
   get 'apikeys' => 'clients#show', as: :apikey
-  post 'login' => 'sessions#login', as: :login
-  get 'logout' => 'sessions#logout', as: :logout
+  
+  get 'login' => 'sessions#new', as: :login
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy', as: :logout
   
   get 'admin' => 'admins#show', as: :admin
   get 'revoke_client' => 'clients#revoke', as: :revoke_client
